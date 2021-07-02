@@ -14,8 +14,20 @@ export default function getScrollbarWidth(cacheEnabled = true) {
             overflow: 'scroll',
             MsOverflowStyle: 'scrollbar'
         });
+
+        const divInner = document.createElement('div');
+        css(divInner, {
+            width: '100%',
+            height: '100%',
+        });
+
+        div.appendChild(divInner);
         document.body.appendChild(div);
-        scrollbarWidth = (div.offsetWidth - div.clientWidth);
+
+        const divWidth = div.getBoundingClientRect().width;
+        const divInnerWidth = divInner.getBoundingClientRect().width;
+        scrollbarWidth = divWidth - divInnerWidth + 0.01;
+
         document.body.removeChild(div);
     } else {
         scrollbarWidth = 0;
