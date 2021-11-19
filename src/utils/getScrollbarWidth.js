@@ -26,7 +26,7 @@ export default function getScrollbarWidth(cacheEnabled = true) {
 
         const divWidth = div.getBoundingClientRect().width;
         const divInnerWidth = divInner.getBoundingClientRect().width;
-        scrollbarWidth = divWidth - divInnerWidth + 0.01;
+        scrollbarWidth = divWidth - divInnerWidth;
 
         document.body.removeChild(div);
     } else {
