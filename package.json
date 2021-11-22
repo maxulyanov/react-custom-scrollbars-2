@@ -1,6 +1,6 @@
 {
   "name": "react-custom-scrollbars-fix",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "description": "React scrollbars component",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
